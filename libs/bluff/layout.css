@@ -1,0 +1,26 @@
+@charset'utf-8';
+html {height:100%;}
+body {height:100%;margin:0;padding:0;color:#000;background-color:#cdcdcd;font-family:Arial, Helvetica, sans-serif;font-size:12px}
+#cCont {border-radius:5px;border:1px solid #666;background-color:#fff;width:700px;margin:auto;padding:20px;min-height:400px;}
+#cCont table {border:1px solid #ccc; border-collapse:collapse; border-spacing:0; width:100%; display:table;}
+#cCont table tr {border-bottom:1px solid #ddd;}
+#cCont table td {padding:4px 8px; display:table-cell; text-align:left; vertical-align:top;}
+#cCont table th {padding:4px 8px; display:table-cell; text-align:left; vertical-align:top; font-width:300}
+#cCont table tbody tr:nth-child(2n) {background-color:#f1f1f1;}
+.cont {padding:0px 20px;}
+div.bluff-tooltip {font-size:12px; background-color:#fff; padding:2px 4px; border-radius:3px; border-left:1px solid #CCC; border-right:1px solid #CCC; border-top:1px solid #CCC; border-bottom:2px groove #aaa;}
+div span.label {}
+div span.data {font-weight:bold; padding-left:5px;}
+caption {font-size:16px; margin:2px 0 8px 0; text-align:left;}
+.bluff-wrapper {}
+#data0, #data1, #data2, #data3, #data4, #data5, #data6, #data7, #data8, #data9, #data10 {float:left;}
+.spacer {height:30px; clear:both;}
+#tL {color:#fdec9a; font-weight:bold; font-size:16px; padding-bottom:20px;}
+h1, h2, h3, h4, h5, h6 {font-family:Verdana,Arial,sans-serif; font-weight:300; margin:10px 0;}
+h1 {font-size:36px; text-shadow:#ccc 0.05em 0.05em 0.1em;}
+h2 {font-size:30px; text-shadow:#ccc 0.05em 0.05em 0.1em;}
+h3 {font-size:24px; text-shadow:#ccc 0.05em 0.05em 0.1em;}
+h4 {font-size:20px}
+h5 {font-size:18px}
+h6 {font-size:16px}
+

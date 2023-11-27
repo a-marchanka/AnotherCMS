@@ -1,0 +1,31 @@
+<p>&nbsp;</p>
+<div class="w3-container w3-card">
+<h2><img src="/content/images/logo_hsog.png" alt="" /></h2>
+<hr />
+<div class="w3-half"><form id="auth" action="#" method="post" name="auth"><input name="action" type="hidden" value="login" /> <input name="subaction" type="hidden" value="account" /> <input id="sig1" name="sig" type="hidden" value="empty" />
+<h3>Login</h3>
+<div class="w3-section"><label><strong class="w3-text-grey">Loginname</strong></label> <input class="w3-input w3-border" name="nick" required="" type="text" value="" /></div>
+<div class="w3-section"><label><strong class="w3-text-grey">Passwort</strong></label> <input class="w3-input w3-border" name="pwd" required="" type="password" value="" /></div>
+<input class="w3-button w3-navy w3-text-white" type="submit" value="Login" /><br />&nbsp;</form>
+<ul style="list-style-type: circle;">
+<li>Die Kontoerstellung ist kostenlos. Bitte missbrauchen Sie den Service nicht.</li>
+<li>Verwenden Sie ein Passwort mit mindestens 3 Zeichen.</li>
+<li>Wenn Sie das Passwort einmal falsch eingegeben haben, warten Sie 20 Sekunden, bevor Sie es erneut eingeben.</li>
+<li>Nicht aktiven Benutzerkonten werden in 14 Tagen automatisch gel&ouml;scht.</li>
+<li>Die Regeln k&ouml;nnen ohne Vorwarnung ge&auml;ndert werden.</li>
+</ul>
+</div>
+<div class="w3-half"><form id="regi" action="#" method="post" name="regi"><input id="action" name="action" type="hidden" value="login" /> <input id="subaction" name="subaction" type="hidden" value="request" /> <input id="sig2" name="sig" type="hidden" value="empty" />
+<h3>Account einrichten</h3>
+<div class="w3-section"><label><strong class="w3-text-grey">Loginname</strong></label> <input class="w3-input w3-border" name="nick" required="" type="text" value="" /></div>
+<div class="w3-section"><label><strong class="w3-text-grey">Passwort</strong></label> <input class="w3-input w3-border" name="pwd" required="" type="text" value="" /></div>
+<input class="w3-button w3-navy w3-text-white" type="submit" value="Erstellen" /></form></div>
+</div>
+<p>
+<script>
+/* <![CDATA[ */
+document.forms['auth'].elements['sig'].value = screen.width + '#' + screen.height + '#' + screen.colorDepth + '#' + navigator.language;
+document.forms['regi'].elements['sig'].value = screen.width + '#' + screen.height + '#' + screen.colorDepth + '#' + navigator.language;
+/* ]]> */
+</script>
+</p>

@@ -1,0 +1,57 @@
+<h2>Website statistics with Raspberry Pi and Sqlite3</h2>
+<p>Login, upload webserver log, start processing, get website statistics, download ETL, download relational database.</p>
+<div class="w3-half">
+<form id="auth" name="auth" action="#" method="post">
+<input name="action" type="hidden" value="login" />
+<input name="subaction" type="hidden" value="account" />
+<input name="sig" id="sig1" value="empty" type="hidden" />
+<h4>Authorization</h4>
+  <div class="w3-section">
+    <label style="color:#999;">Login name</label>
+    <input class="w3-input" required="" type="text" name="nick" value="" />
+  </div>
+  <div class="w3-section">
+    <label style="color:#999;">Password</label>
+    <input class="w3-input" required="" type="password" name="pwd" value="" />
+  </div>
+  <input class="w3-button w3-green" type="submit" value="Login" /><br />&nbsp;<br />
+</form>
+</div>
+
+<div class="w3-half">
+<form id="regi" name="regi" action="#" method="post">
+<input id="action" name="action" type="hidden" value="login" />
+<input id="subaction" name="subaction" type="hidden" value="request" />
+<input name="sig" id="sig2" value="empty" type="hidden" />
+<h4>Project account</h4>
+  <div class="w3-section">
+    <label style="color:#999;">Login name</label>
+    <input class="w3-input" required="" type="text" name="nick" value="" />
+  </div>
+  <div class="w3-section">
+    <label style="color:#999;">Password</label>
+    <input class="w3-input" required="" type="text" name="pwd" value="" />
+  </div>
+  <input class="w3-button w3-orange" type="submit" value="Create" />
+</form>
+</div>
+
+<div class="w3-bar">
+<h4>Rules for use</h4>
+<ul style="list-style-type: circle;">
+<li>The account registration is free. Don't misuse the service please.</li>
+<li>Many accounts can be created with a period of 2 minutes.</li>
+<li>Use a password of at least 3 characters.</li>
+<li>If you have entered the password incorrectly once, then wait 20 seconds before entering it again.</li>
+<li>Unused accounts older than 14 days will be automatically deleted.</li>
+<li>Files older 1 day will be automatically deleted.</li>
+<li>The rules can be changed without warning.</li>
+</ul>
+</div>
+
+<script>
+/* <![CDATA[ */
+document.forms['auth'].elements['sig'].value = screen.width + '#' + screen.height + '#' + screen.colorDepth + '#' + navigator.language;
+document.forms['regi'].elements['sig'].value = screen.width + '#' + screen.height + '#' + screen.colorDepth + '#' + navigator.language;
+/* ]]> */
+</script>

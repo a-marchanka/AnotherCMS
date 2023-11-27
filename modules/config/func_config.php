@@ -1,0 +1,68 @@
+<?php
+/* ==================================================== ##
+##             COPYRIGHTS © Another CMS              ##
+## ==================================================== ##
+## PRODUCT : CMS(CONTENT MANAGEMENT SYSTEM)             ##
+## LICENSE : GNU(General Public License v.3)            ##
+## TECHNOLOGIES : PHP & Sqlite                          ##
+## WWW : www.zapms.de | www.marchenko.de                ##
+## E-MAIL : andrey@marchenko.de                         ##
+## ==================================================== */
+
+function configGetInfo($db_prefix, $db_link, $dtree_id = 1, $param = '') {
+	$cfg_info = array();
+	$count = 0;
+	$sql = '';
+	$sql_filter = 'WHERE 1=1';
+	$sql_order = 'ORDER BY 1';
+
+	if ($dtree_id && !$param) $sql_filter .= ' AND conf.dtree_id='.$dtree_id;
+	else                      $sql_filter .= ' AND conf.param=\''.$param.'\'';
+	$sql = 'SELECT conf.param, conf.value FROM '.$db_prefix.'config conf '.$sql_filter.' '.$sql_order;
+	//echo $sql;
+	$result = $db_link->query($sql) or 0;
+	if ($result) {
+		while ( $row = $result->fetchArray(SQLITE3_ASSOC) ) {
+			$count ++;
+			$key = $row['param'];
+			$cfg_info[$key] = $row['value'];
+		}
+		$result->finalize();
+	}
+	//print_r($cfg_info);
+	return ($cfg_info);
+}
+//------------------------------------------------------------
+function configGetAll($db_prefix, $db_link, $auth_id) {
+	$sql_info = array();
+	$count = 0;
+	$sql = '';
+	$sql_filter = '';
+	$sql_order = 'ORDER BY 1, 2';
+
+	// search criteria
+	$sql_filter = ' AND us.id='.$auth_id;
+	$sql = 'SELECT DISTINCT
+		 dt.parent_id, dt.priority, co.id AS id, co.dtree_id AS dtree_id,
+		 co.param, co.value, dt.title, co.description, co.tip
+		 FROM '.$db_prefix.'dtree dt, '.$db_prefix.'config co, '.$db_prefix.'dtree_role dtro, '.$db_prefix.'user us
+		 WHERE dt.id = co.dtree_id
+		   AND dt.id = dtro.dtree_id
+		   AND dtro.role_id = us.role_id
+		   AND us.active > 0
+		   AND dtro.attr > 0'.$sql_filter.' '.$sql_order;
+	//echo $sql;
+	$result = $db_link->query($sql) or 0;
+	if ($result) {
+		while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+			$count ++;
+			$sql_info = array_pad($sql_info, $count, $row);
+		}
+		$result->finalize();
+	}
+	//print_r($sql_info);
+	return ($sql_info);
+}
+
+
+?>

@@ -1,0 +1,87 @@
+<?php
+$SYS_WARN_MSG = array(
+	'your_login' => 'Geben Sie Ihren Benutzernamen und das Passwort ein. Anschliessend bitte Anmelden klicken.',
+	'wrong_psw' => 'Passwort ist falsch',
+	'password_notconfirm' => 'Passwort und Passwort zum Wiederholen sind anders',
+	'wrong_nick' => 'Bitte den anderen Loginname eingeben',
+	'valide_nick' => 'Keine spezialle Symbole für den Namen bitte, nur A-Z, a-z, 0-9, -, _',
+	'user_locked' => 'Benutzer ist für 20 Sekunden gesperrt',
+	'not_auth' => 'Benutzer ist nicht angemeldet',
+	'ok_auth' => 'Willkommen',
+	'exit_auth' => 'Sie haben sich abgemeldet',
+	'wrong_auth' => 'Nicht ausreichende Berechtigungen',
+	'notcreated' => 'Fehler beim Speichern in Datenbank. ',
+	'ok_user' => 'Sie sind registriert, nach der Prüfung wird Ihr Account freigeschaltet. ',
+	'email_sent' => 'E-Mail gesendet. ',
+	'email_notsent' => 'E-Mail konnte nicht abgeschickt werden',
+	'try_later' => 'Daten wegen Spamschutz nicht gesendet. Bitte versuchen Sie es in 2 Minuten wieder. ',
+
+	'email_notcreated' => 'Die E-Mail ist in unserer Datenbank schon vorhanden. ',
+	'email_created' => 'Vielen Dank f&uuml;r Ihre Anmeldung. Sie bekommen in K&uuml;rze die E-Mail, nach Best&auml;tigung der Anmeldung wird ihre E-Mail-Adresse f&uuml;r Newsletter aktiviert. ',
+	'email_accepted' => 'Vielen Dank f&uuml;r Ihre Best&auml;tigung. Ihre E-Mail-Adresse wurde f&uuml;r Newsletter aktiviert. ',
+	'email_notaccepted' => 'Interner Fehler. Ihre E-Mail-Adresse wurde f&uuml;r Newsletter nicht aktiviert. ',
+	'email_notverified' => 'Fehler bei der Verifizierung. Die E-Mail-Adresse existiert nicht. ',
+	'email_rejected' => 'Vielen Dank f&uuml;r Ihre Anfrage. Ihre E-Mail-Adresse wurde komplett gel&ouml;scht. ',
+	'email_notrejected' => 'Interner Fehler. Ihre E-Mail-Adresse ist noch f&uuml;r Newsletter aktiv. ',
+	'email_rejection' => 'Vielen Dank f&uuml;r Ihre Anfrage. Sie bekommen in K&uuml;rze die E-Mail, nach Best&auml;tigung der Abmeldung wird ihre E-Mail-Adresse gel&ouml;scht werden. ',
+	
+	'shop_payment_error' => 'Fehler mit der Zahlungsmethode, bitte wählen Sie eine andere. ',
+	
+	'not_all_mandatory' => 'Nicht alle Pflichtfelder (*) sind ausgefüllt.',
+	'action_wrong' => 'Parameter ist falsch, vielleicht sie haben keine Zugriffsrechte. ',
+	'module_notfound' => 'Das Modul ist nicht installiert. ',
+	'dateformat_wrong' => 'Format des Datums ist falsch. ',
+	'no_results' => 'Keine Treffer. ',
+	'session_old' => 'Ihre Session ist abgelaufen. ',
+	'email_invalid' => 'E-Mail-Adresse ist falsch. ',
+	'email_notunique' => 'Die E-Mail-Adresse ist bereits vorhanden.',
+	'page_invalid' => 'Seitennummer ist falsch. ',
+	'select_label' => '-- bitte wählen --',
+
+	'created' => 'Erfolgreich erstellt',
+	'notcreated' => 'Kann nicht in die Datenbank einf&uuml;gen',
+	'deleted' => 'Erfolgreich gel&ouml;scht',
+	'notdeleted' => 'Kann nicht aus der Datenbank l&ouml;schen',
+	'notsingle' => 'Es gibt die Abh&auml;ngigkeiten',
+	'updated' => 'Erfolgreich aktualisiert',
+	'notupdated' => 'Kann nicht in der Datenbank aktualisieren',
+
+	'f_uploaded' => 'Datei wurde hochgeladen',
+	'f_notuploaded' => 'Datei wurde nicht hochgeladen',
+	'f_name_ext' => 'Datei wird nicht unterstützt',
+	'f_deleted' => 'Datei wurde gelöscht',
+	'f_notdeleted' => 'Datei wurde nicht gelöscht',
+	'f_nospace' => 'Platz reicht nicht aus',
+
+	'p_asknew' => 'Erstellen Sie bitte Ihr eigenes Profil, um auch andere zu sehen. Wenn das Profil erstellt worden ist, bitte warten bis es freigeschaltet wird.',
+	
+	'contact_send' => 'Vielen Dank für Ihre Anfrage.',
+	'contact_notsend' => 'Ihre E-Mail ist nicht abgeschickt. ',
+	'contact_msg' => 'Dies ist eine automatisch generierte E-Mail. ',
+	'contact_mandatory' => 'Bitte geben Sie mindestens Ihren Namen und Ihre E-Mail-Adresse an.',
+
+	'book_created' => 'Vielen Dank für Ihren Eintrag, nach redaktioneller Prüfung wird dieser in Kürze freigegeben.',
+	'book_notcreated' => 'Fehler beim Speichern in db. ',
+	'book_spam' => 'Nachricht nicht gesendet wegen Spamschutz. Bitte versuchen Sie es zu einem späteren Zeitpunkt. ',
+	'book_msg' => 'Dies ist eine automatisch generierte E-Mail. ',
+
+	'basket_added' => 'Zu dem Warenkorb hinzugefügt',
+	'basket_updated' => 'Erfolgreich aktualisiert',
+
+	'mm01' => 'Januar',
+	'mm02' => 'Februar',
+	'mm03' => 'März',
+	'mm04' => 'April',
+	'mm05' => 'Mai',
+	'mm06' => 'Juni',
+	'mm07' => 'Juli',
+	'mm08' => 'August',
+	'mm09' => 'September',
+	'mm10' => 'Oktober',
+	'mm11' => 'November',
+	'mm12' => 'Dezember',
+
+	'mr_id' => 'Herr', 'mr_ref' => 'Sehr geehrter Herr',
+	'ms_id' => 'Frau', 'ms_ref' => 'Sehr geehrte Frau'
+);
+?>

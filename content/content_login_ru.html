@@ -1,0 +1,33 @@
+<div class="w3-container w3-card w3-white w3-round">
+<h2>Книговорот</h2><p>Для регистрации спросите общий пароль в своей группе Ватсап. Имя пользователя любое.<p>
+<hr />
+<div class="w3-half"><form id="auth" action="#" method="post" name="auth"><input name="action" type="hidden" value="login" /> <input name="subaction" type="hidden" value="account" /> <input id="sig1" name="sig" type="hidden" value="empty" />
+<h3>Вход</h3>
+<div class="w3-section"><label><strong class="w3-text-grey">Пользователь</strong></label> <input class="w3-input w3-border" name="nick" required="" type="text" value="" /></div>
+<div class="w3-section"><label><strong class="w3-text-grey">Пароль</strong></label> <input class="w3-input w3-border" name="pwd" required="" type="password" value="" /></div>
+<input class="w3-button w3-green w3-text-white" type="submit" value="Войти" /><br />
+<ul class="w3-padding" style="list-style-type: circle;">
+<li>Если вы неправильно ввели пароль, то подождите 20 секунд перед тем, как вводить его снова.</li>
+</ul>
+</form>
+</div>
+<div class="w3-half"><form id="regi" action="#" method="post" name="regi"><input id="action" name="action" type="hidden" value="login" /> <input id="subaction" name="subaction" type="hidden" value="request" /> <input id="sig2" name="sig" type="hidden" value="empty" />
+<h3>Регистрация</h3>
+<div class="w3-section"><label><strong class="w3-text-grey">Пользователь</strong></label> <input class="w3-input w3-border" name="nick" required="" type="text" value="" /></div>
+<div class="w3-section"><label><strong class="w3-text-grey">Пароль</strong></label> <input class="w3-input w3-border" name="pwd" required="" type="text" value="" /></div>
+<input class="w3-button w3-pink w3-text-white" type="submit" value="Создать" /><br />
+<ul class="w3-padding" style="list-style-type: circle;">
+<li>Пароль должен содержать не менее 3х символов.</li>
+<li>Неиспользуемые профили удаляются автоматически через 6 месяцев.</li>
+<li>Правила могут быть изменены без предупреждения.</li>
+</ul>
+</form>
+</div>
+</div>
+
+<script>
+/* <![CDATA[ */
+document.forms['auth'].elements['sig'].value = screen.width + '#' + screen.height + '#' + screen.colorDepth + '#' + navigator.language;
+document.forms['regi'].elements['sig'].value = screen.width + '#' + screen.height + '#' + screen.colorDepth + '#' + navigator.language;
+/* ]]> */
+</script>

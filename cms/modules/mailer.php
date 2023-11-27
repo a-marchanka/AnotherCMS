@@ -15,8 +15,6 @@ function mailerSendSimple($mx = '', $to = '', $reply ='', $from = '', $cc = '', 
 	foreach($msg_var as $var => $param) {
 		if ($param) if (isset($msg_syn[$var])) $html_content .= $msg_syn[$var].': '.$param.'<br />';
 	}
-	if ($html_content) $html_content .= '<p>'.date('d.m.Y H:i:s').'</p>';
-	
 	if ($from) $header .= "From: ".$from."\n";
 	if ($reply) $header .= "Reply-To: ".$reply."\n";
 	if ($cc) $header .= "Cc: ".$cc."\n";

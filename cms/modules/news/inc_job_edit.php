@@ -64,7 +64,7 @@ else {
 		for ($i = 0; $i < $out_cnt; $i++) {
 			$tmp_descr = '';
 			// send email
-			if (mailerSendSimple($sys_mx, $out_var[$i]['email'], $nwl_email, $nwl_email, '', '', $news_item['title'], $news_item['message'], $site_url.'/images/w3.css')) {
+			if (mailerSendSimple($sys_mx, $out_var[$i]['email'], $nwj_email, $nwj_email, '', '', $news_item['title'], $news_item['message'], $site_url.'/images/w3.css')) {
 				$tmp_descr = $SYS_WARN_MSG['email_sent'].' '.$out_var[$i]['email'];
 				$warning_msg .= ($warning_msg?'<br>':'').$tmp_descr;
 				$success = 1;

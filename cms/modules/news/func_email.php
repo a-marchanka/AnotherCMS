@@ -107,6 +107,13 @@ function emailCleanUp($db_prefix, $db_link) {
 	return (($list)?($result):(0));
 }
 //------------------------------------------------------------
+function emailProlong($db_prefix, $db_link) {
+	$sql = 'UPDATE '.$db_prefix.'news_email SET enabled=1, validetime='.mktime(0, 0, 0, 1, 1, date("Y")+2).' WHERE enabled=0 AND validetime<'.time();
+	//print $sql;
+	$result = $db_link->exec($sql) or 0;
+	return ($result);
+}
+//------------------------------------------------------------
 function emailUpdate($db_prefix, $db_link, $filter_id = 0, $array_db) {
 	$sql = 'UPDATE '.$db_prefix.'news_email  SET ';
 	foreach ($array_db as $var => $param) {

@@ -39,7 +39,8 @@ oCnfr('delete','item',uid,'{/literal}{#LB_delete#}{literal} #'+uid+'?');
 	<div class="w3-right w3-hide-small w3-hide-medium">
 	{if $entry_info.entry_attr > 2} &nbsp;<br>
 	<input id="TnewObj1" class="w3-button w3-margin-right-8 w3-margin-bottom-8 w3-theme" type="button" onclick="rScr('details','item')" value="{#LB_newEmail#}">
-	<input id="TnewObj2" class="w3-button w3-margin-right-8 w3-margin-bottom-8 w3-theme" type="button" onclick="oModul('132','list')" value="{#LB_jobs#}">
+	<input id="TnewObj2" class="w3-button w3-margin-right-8 w3-margin-bottom-8 w3-theme" type="button" onclick="rScr('list','prolong')" value="{#LB_prolong#}">
+	<input id="TnewObj3" class="w3-button w3-margin-right-8 w3-margin-bottom-8 w3-theme" type="button" onclick="oModul('132','list')" value="{#LB_jobs#}">
 	{/if}
 	</div>
 </div>
@@ -143,9 +144,9 @@ oCnfr('delete','item',uid,'{/literal}{#LB_delete#}{literal} #'+uid+'?');
 <div class="w3-row">
 {if $entry_info.entry_attr > 2} &nbsp;<br>
 <input id="newObj1" class="w3-button w3-margin-right-8 w3-margin-bottom-8 w3-theme" type="button" onclick="rScr('details','item')" value="{#LB_newEmail#}">
-<input id="newObj2" class="w3-button w3-margin-right-8 w3-margin-bottom-8 w3-theme" type="button" onclick="oModul('132','list')" value="{#LB_jobs#}">
+<input id="newObj2" class="w3-button w3-margin-right-8 w3-margin-bottom-8 w3-theme" type="button" onclick="rScr('list','prolong')" value="{#LB_prolong#}">
+<input id="newObj3" class="w3-button w3-margin-right-8 w3-margin-bottom-8 w3-theme" type="button" onclick="oModul('132','list')" value="{#LB_jobs#}">
 {/if}
 </div>
 <hr class="w3-light-grey">
 {/strip}
-

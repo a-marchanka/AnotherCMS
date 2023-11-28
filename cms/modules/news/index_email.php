@@ -48,6 +48,8 @@ case 'delete':
 	$action = 'list';
 //------------------------------------------------------------
 case 'list':
+	// prolong subscriptions
+	if ($subaction == 'prolong') if (emailProlong(DB_PREFIX, $db_link)) $warning_msg .= $SYS_WARN_MSG['updated'];
 	// clean-up deleted menu  // clean-up status
 	if (emailValideTime(DB_PREFIX, $db_link) && emailCleanUp(DB_PREFIX, $db_link)) $warning_msg .= $SYS_WARN_MSG['cleanup'];
 	// list

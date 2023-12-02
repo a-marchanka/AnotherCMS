@@ -17,6 +17,5 @@ header('Content-Type: text/plain');
 header('Content-Disposition: inline; filename="ads.txt"');
 header('Content-Length: '.strlen($content_str));
 echo $content_str;
-
 unset($content_str);
 ?>

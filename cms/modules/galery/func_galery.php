@@ -308,21 +308,16 @@ function galeryCreateThumb($img_src_path, $thumb_path, $ext, $img_quality = 90, 
 //------------------------------------------------------------
 function galeryCreateImage($img_src_path, $img_dst_path, $ext, $size, $watermark = '', $img_quality = 90, $rotation = 0, $crop = 0) {
 	// default value
+	if (!is_numeric($size) || !$size) $size = 500;
+	$width_src = 500;
 	$height_src = 500;
-        $width_src = 500;
-	$height_trg = 500;
-        $width_trg = 500;
 	$x_src = 0;
 	$y_src = 0;
 	$x_trg = 0;
 	$y_trg = 0;
-	// get properties
-	if (!is_numeric($size) || !$size) $size = 500;
 	$size_src = getimagesize($img_src_path);
 	$width_src = $size_src[0];
 	$height_src = $size_src[1];
-	$width_trg = ($size == 1)?($width_src):($size);
-	$height_trg = ($size == 1)?($height_src):($size);
 	// type
 	if ($ext == 'jpg' || $ext == 'jpeg')
 		$img_src = imagecreatefromjpeg($img_src_path);
@@ -331,30 +326,36 @@ function galeryCreateImage($img_src_path, $img_dst_path, $ext, $size, $watermark
 	else if ($ext == 'png')
 		$img_src = imagecreatefrompng($img_src_path);
 	else $img_src = null;
-	// create image
-	if ( ($height_src > $width_src && ($rotation == 0 || $rotation == 180)) || ($height_src < $width_src && ($rotation == 90 || $rotation == 270)) ) {
-		if ($height_src/$width_src > $crop && $crop > 0) {
-			$height_trg = floor($width_trg*$crop);
-			$y_src = floor(($height_src - $height_src*$crop)/2);
-			//$height_src = floor($height_src*$crop);
-			$height_src = floor($height_src*$crop);
-		} else
-			$height_trg = floor($width_trg*$height_src/$width_src);
-	} else {
-		if ($width_src/$height_src > $crop && $crop > 0) {
-			$width_trg = floor($height_trg*$crop);
-			$x_src = floor(($width_src - $width_src*$crop)/2);
-			$width_src = floor($width_src*$crop);
-		} else
-			$width_trg = floor($height_trg*$width_src/$height_src);
+	// rotate source
+	if ($rotation > 0 && $img_src) {
+		$img_src = imagerotate($img_src, $rotation, 0);
+		$width_src = $height_trg;
+		$height_src = $width_trg;
 	}
-	// create image
+	$width_trg = $width_src;
+	$height_trg = $height_src;
+	// dimensions with crop
+	if ($height_src >= $width_src) { // vertical image
+		if ($height_src/$width_src > $crop && $crop > 0) {
+			$height_trg = floor($height_src*$crop);
+			$y_src = floor(($height_src - $height_src*$crop)/2);
+			$height_src = $height_trg;
+		} else	$height_trg = $height_src;
+	} else { // horizontal image
+		if ($width_src/$height_src > $crop && $crop > 0) {
+			$width_trg = floor($width_src*$crop);
+			$x_src = floor(($width_src - $width_src*$crop)/2);
+			$width_src = $width_trg;
+		} else $width_trg = $width_src;
+	}
+	// resize
+	$width_trg = ($size == 1)?($width_trg):($size);
+	$height_trg = ($size == 1)?($height_trg):(floor($size*$height_src/$width_src));
+	//echo $width_trg.'x'.$height_trg.' '.$width_src.'x'.$height_src.' '.$x_trg.'x'.$y_trg.' '.$x_src.'x'.$y_src;
+	// create target image
 	$img_trg = imagecreatetruecolor($width_trg, $height_trg);
-	// crop
+	// scale target
 	imagecopyresampled($img_trg, $img_src, $x_trg, $y_trg, $x_src, $y_src, $width_trg, $height_trg, $width_src, $height_src);	
-	// rotate
-	if ($rotation > 0)
-		$img_trg = imagerotate($img_trg, $rotation, 0);
 	// write text
 	if ($watermark) {
 		$text_color = imagecolorallocate ($img_trg, 200, 200, 200);

@@ -36,8 +36,8 @@ function htmlEncode($str) {
 //------------------------------------------------------------
 // html decode
 function htmlDecode($str) {
-	$search = array('&amp;', '&lt;', '&gt;', '&#039;', '&acute;', '&quot;', '&Auml;', '&auml;', '&Ouml;', '&ouml;', '&Uuml;', '&uuml;', '&szlig;');
-	$replace = array('&', '<', '>', "&#039;", "&#039;", '"', 'Ä', 'ä', 'Ö', 'ö', 'Ü', 'ü', 'ß');
+	$search = array(' /&gt;', '&amp;', '&lt;', '&gt;', '&#039;', '&acute;', '&quot;', '&Auml;', '&auml;', '&Ouml;', '&ouml;', '&Uuml;', '&uuml;', '&szlig;');
+	$replace = array( ' >', '&', '<', '>', "&#039;", "&#039;", '"', 'Ä', 'ä', 'Ö', 'ö', 'Ü', 'ü', 'ß');
 	return (str_replace($search, $replace, $str));
 }
 //------------------------------------------------------------

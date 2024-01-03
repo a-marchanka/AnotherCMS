@@ -318,6 +318,8 @@ function galeryCreateImage($img_src_path, $img_dst_path, $ext, $size, $watermark
 	$size_src = getimagesize($img_src_path);
 	$width_src = $size_src[0];
 	$height_src = $size_src[1];
+	$width_trg = $width_src;
+	$height_trg = $height_src;
 	// type
 	if ($ext == 'jpg' || $ext == 'jpeg')
 		$img_src = imagecreatefromjpeg($img_src_path);
@@ -332,8 +334,6 @@ function galeryCreateImage($img_src_path, $img_dst_path, $ext, $size, $watermark
 		$width_src = $height_trg;
 		$height_src = $width_trg;
 	}
-	$width_trg = $width_src;
-	$height_trg = $height_src;
 	// dimensions with crop
 	if ($height_src >= $width_src) { // vertical image
 		if ($height_src/$width_src > $crop && $crop > 0) {
